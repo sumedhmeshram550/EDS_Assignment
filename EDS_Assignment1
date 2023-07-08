@@ -1,0 +1,24 @@
+#@title Default title text
+#find the statistical analysis of employees records
+
+f = open("/content/sample_data/emp.csv","r")
+
+contents = f.read()
+lines = contents.split("\n")
+
+eid = []; nm = []; desgn = []; sal = [];
+
+for l in lines:
+  words = l.split(",")
+  print(words)
+  eid.append(int(words[0]))
+  nm.append(words[1])
+  desgn.append(words[2])
+  sal.append(int(words[3]))
+  print("Employee IDs :",eid)
+  print("Employee Name :",nm)
+  print("Employee Designation :",desgn)
+  print("Employee Salary :",sal)
+
+  #max salary
+  print("maximum salary of the company is :",max(sal))
